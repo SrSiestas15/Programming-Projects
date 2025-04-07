@@ -9,6 +9,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		public BBParameter<GameObject> baseballPrefab;
 		public BBParameter<GameObject> batterGO;
+		public BBParameter<int> timesUntilAttack;
 
 		public float pitchSpeed;
 		public enum destinations {forward, toBatter};
@@ -21,17 +22,25 @@ namespace NodeCanvas.Tasks.Actions {
 			{
 				pitchDirection = Vector3.left;
 			}
-			else if (destination == destinations.toBatter)
-			{
-				pitchDirection = (batterGO.value.transform.position - agent.transform.position).normalized;
-			}
+			
 			return null;
 		}
 
 		protected override void OnExecute() {
-			GameObject baseballGO = GameObject.Instantiate(baseballPrefab.value, agent.transform.position, Quaternion.identity);
+            if (destination == destinations.toBatter)
+            {
+                pitchDirection = (batterGO.value.transform.position - agent.transform.position).normalized;
+            }
+
+            GameObject baseballGO = GameObject.Instantiate(baseballPrefab.value, agent.transform.position, Quaternion.identity);
 			baseballGO.GetComponent<Rigidbody2D>().velocity = pitchDirection * pitchSpeed;
-			EndAction(true);
+
+            if (destination == destinations.forward)
+            {
+                timesUntilAttack.value --;
+            }
+
+            EndAction(true);
 		}
 
 		//Called once per frame while the action is active.

@@ -122,102 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &71491442
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 71491445}
-  - component: {fileID: 71491444}
-  - component: {fileID: 71491443}
-  m_Layer: 9
-  m_Name: Baseball
-  m_TagString: Enemy Projectile
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!58 &71491443
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71491442}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!50 &71491444
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71491442}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!4 &71491445
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71491442}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5436034, y: 1.266129, z: -0.04374741}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 1090189519}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &368507725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -411,6 +315,8 @@ GameObject:
   - component: {fileID: 723352664}
   - component: {fileID: 723352663}
   - component: {fileID: 723352662}
+  - component: {fileID: 723352668}
+  - component: {fileID: 723352667}
   m_Layer: 8
   m_Name: Batter
   m_TagString: Enemy
@@ -480,9 +386,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{}}'
+  _serializedBlackboard: '{"_variables":{"baseballGO":{"_name":"baseballGO","_id":"3572c1cf-90c7-43e7-9a93-aa5796f97a04","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences: []
-  _serializedVariables: []
+  _serializedVariables:
+  - _json: '{"_name":"baseballGO","_id":"3572c1cf-90c7-43e7-9a93-aa5796f97a04","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
 --- !u!114 &723352665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,8 +406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"dynamic":true,"_position":{"x":505.566,"y":136.2462},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"_position":{"x":349.566,"y":269.2462},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_position":{"x":257.566,"y":367.2462},"_comment":"If
-    Pitcher is aiming at Batter","$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"2"},{"_position":{"x":441.566,"y":368.2462},"_comment":"Hit
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"dynamic":true,"_position":{"x":505.566,"y":136.2462},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"_position":{"x":349.566,"y":269.2462},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_condition":{"baseballGO":{"_name":"baseballGO","_targetVariableID":"3572c1cf-90c7-43e7-9a93-aa5796f97a04"},"$type":"NodeCanvas.Tasks.Conditions.PassedBallCT"},"_position":{"x":240.566,"y":378.2462},"_comment":"If
+    Pitcher is aiming at Batter","$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"2"},{"_action":{"baseballGO":{"_name":"baseballGO","_targetVariableID":"3572c1cf-90c7-43e7-9a93-aa5796f97a04"},"ballSpeed":10.0,"$type":"NodeCanvas.Tasks.Actions.FastballAT"},"_position":{"x":441.566,"y":380.2462},"_comment":"Hit
     the ball towards the player","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_position":{"x":667.566,"y":272.2462},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"4"},{"_position":{"x":596.566,"y":367.2462},"_comment":"Move
     towards player","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"5"},{"_position":{"x":762.566,"y":368.2462},"_comment":"Swipe
     with bat","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
@@ -532,6 +442,47 @@ Transform:
   - {fileID: 967327209}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &723352667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723352661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591176d50c7e285419879b56f533365d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pitchedTo: 0
+  baseballGO: {fileID: 0}
+--- !u!50 &723352668
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723352661}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &777721423
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,90 +651,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1090189518
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1090189519}
-  - component: {fileID: 1090189520}
-  m_Layer: 0
-  m_Name: Circle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1090189519
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090189518}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 71491445}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1090189520
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090189518}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1762764766
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,11 +685,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{"checkForAttack":{"_name":"checkForAttack","_id":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+  _serializedBlackboard: '{"_variables":{"attacksLeft":{"_value":3,"_name":"attacksLeft","_id":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Baseball
+    Prefab":{"_value":1,"_name":"Baseball Prefab","_id":"272fb2c3-f450-49ef-b749-50b4e196bdae","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Batter
+    GO":{"_value":2,"_name":"Batter GO","_id":"aeb3e417-0360-49b4-bd07-91a0e92030c6","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"timesUntilAttack":{"_value":3,"_name":"timesUntilAttack","_id":"97e71678-8fb3-41cb-90e8-db9fb3f1746a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
-  _objectReferences: []
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 7650862540438928936, guid: e9e669e0fe6d6544f8e0b263748b0660, type: 3}
+  - {fileID: 723352661}
   _serializedVariables:
-  - _json: '{"_name":"checkForAttack","_id":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+  - _json: '{"_value":3,"_name":"attacksLeft","_id":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_value":1,"_name":"Baseball Prefab","_id":"272fb2c3-f450-49ef-b749-50b4e196bdae","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 7650862540438928936, guid: e9e669e0fe6d6544f8e0b263748b0660, type: 3}
+  - _json: '{"_value":1,"_name":"Batter GO","_id":"aeb3e417-0360-49b4-bd07-91a0e92030c6","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 723352661}
+  - _json: '{"_value":3,"_name":"timesUntilAttack","_id":"97e71678-8fb3-41cb-90e8-db9fb3f1746a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
 --- !u!114 &1762764768
@@ -838,15 +726,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":481.6216,"y":179.6276},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"_position":{"x":356.6216,"y":279.6276},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_action":{"minValue":{},"maxValue":{"_value":3},"intVariable":{"_name":"checkForAttack","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"$type":"NodeCanvas.Tasks.Actions.SetIntRandom"},"_position":{"x":107.6216,"y":384.6276},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"_condition":{"valueA":{"_name":"checkForAttack","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckInt"},"_position":{"x":313.5668,"y":481.5802},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"3"},{"_action":{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_tag":"Shoot
-    at Batter","_position":{"x":501.6216,"y":391.9613},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"_action":{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_tag":"Shoot
-    in front","_position":{"x":686.5793,"y":311.9603},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"5"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":481.6216,"y":179.6276},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"_position":{"x":356.6216,"y":279.6276},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_condition":{"valueA":{"_name":"attacksLeft","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckInt"},"_position":{"x":81.50101,"y":427.3852},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"2"},{"_action":{"actions":[{"colour":{"r":1.0,"a":1.0},"$type":"NodeCanvas.Tasks.Actions.ChangeColorAT"},{"waitTime":{"_value":0.5},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"colour":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"$type":"NodeCanvas.Tasks.Actions.ChangeColorAT"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Signifier","_position":{"x":285.0,"y":434.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_action":{"actions":[{"baseballPrefab":{"_name":"Baseball
+    Prefab","_targetVariableID":"272fb2c3-f450-49ef-b749-50b4e196bdae"},"batterGO":{"_name":"Batter
+    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"timesUntilAttack":{"_name":"attacksLeft","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"pitchSpeed":10.0,"destination":1,"$type":"NodeCanvas.Tasks.Actions.PitchBallAT"},{"valueA":{"_name":"attacksLeft","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"valueB":{"_name":"timesUntilAttack","_targetVariableID":"97e71678-8fb3-41cb-90e8-db9fb3f1746a"},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Shoot
+    at Batter","_position":{"x":482.6216,"y":430.9753},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"_position":{"x":811.7692,"y":298.5818},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"actions":[{"colour":{"r":1.0,"g":0.8035248,"b":0.5330188,"a":1.0},"$type":"NodeCanvas.Tasks.Actions.ChangeColorAT"},{"waitTime":{"_value":0.5},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"colour":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"$type":"NodeCanvas.Tasks.Actions.ChangeColorAT"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Signfier","_position":{"x":790.5795,"y":419.8312},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"baseballPrefab":{"_name":"Baseball
+    Prefab","_targetVariableID":"272fb2c3-f450-49ef-b749-50b4e196bdae"},"batterGO":{"_name":"Batter
+    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"timesUntilAttack":{"_name":"attacksLeft","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"pitchSpeed":2.0,"$type":"NodeCanvas.Tasks.Actions.PitchBallAT"},{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Shoot
+    in front","_position":{"x":996.2134,"y":412.949},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"7"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences: []
   _boundGraphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 84, y: -46}
+    _translation: {x: 8, y: -27}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
@@ -955,6 +847,10 @@ PrefabInstance:
     - target: {fileID: 217882897133643359, guid: a308100541d7fb04ba030fbaddd0a1c9, type: 3}
       propertyPath: miniShip2
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219801757759514169, guid: a308100541d7fb04ba030fbaddd0a1c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4265122413486000954, guid: a308100541d7fb04ba030fbaddd0a1c9, type: 3}
       propertyPath: m_IsActive
@@ -1161,4 +1057,3 @@ SceneRoots:
   - {fileID: 368507725}
   - {fileID: 1762764769}
   - {fileID: 723352666}
-  - {fileID: 71491445}

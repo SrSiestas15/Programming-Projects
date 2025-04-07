@@ -12,7 +12,7 @@ public class ShipSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -23,7 +23,6 @@ public class ShipSpawner : MonoBehaviour
 
     public IEnumerator SpawnShip()
     {
-        animator.SetBool("Invincible", true);
         yield
         return new WaitForSeconds(.75f);
         
@@ -45,8 +44,7 @@ public class ShipSpawner : MonoBehaviour
         newShip.GetComponent<Collider2D>().enabled = true;
         newShip.GetComponent<PlayerMoveAndShoot>().enabled = true;
         yield
-        return new WaitForSeconds(1);
-        animator.SetBool("Invincible", false);
+        return new WaitForSeconds(2);
         newShip.GetComponent<PlayerDamage>().enabled = true;
     }
 
