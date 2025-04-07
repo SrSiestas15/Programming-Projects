@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy Projectile
+  - Enemy
+  - Environmental Hazard
+  - Destructable
+  - Special Action
+  - Environment
+  - Far
+  - Near
+  - Player Projectile
+  - Clear Stay-On
+  - Bullet Collider (No Spark FX)
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Player Projectile
+  - Enemy
+  - Enemy Projectile
+  - Destructable
+  - Parried Projectile
+  - Activate Trigger
+  - Camera Collider
+  - Boss Trigger
+  - Damage Zone
+  - Waypoint
+  - PowerPoints
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
+  m_Name: BanditArmFSM
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_position":{"x":602.3759,"y":-121.5345},"$type":"NodeCanvas.StateMachines.AnyState"},{"_actionList":{"executionMode":1,"actions":[{"chosenAttack":{"_name":"chosenAttack","_targetVariableID":"4590fb3c-c188-413d-9353-af616a752ce4"},"attackLevel":{"_name":"attackLevel","_targetVariableID":"536c2f42-c014-49d4-87c8-8427b33ec3eb"},"afterAttackTimer":{"_name":"afterAttackTimer","_targetVariableID":"c22dbc77-39c5-4e75-aec7-729dbdc958e9"},"$type":"NodeCanvas.Tasks.Actions.BanditChooseMoveAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Choose
+    Move","_position":{"x":177.0,"y":139.0},"_comment":"Decide the next move and
+    chance depending on HP","$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"armRange":40.0,"rotateSpeed":6.0,"parryTime":5.0,"$type":"NodeCanvas.Tasks.Actions.BossParryAT"}]},"_transitionEvaluation":1,"_color":{"r":0.3529412,"g":0.6039216,"b":0.9647059,"a":1.0},"_name":"Parry","_position":{"x":674.7104,"y":491.6684},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"aimSpeed":1.0,"aimTime":5.0,"waitTime":0.5,"attackTime":1.0,"beamAttack":{"_name":"beamAttack","_targetVariableID":"c1cf3bf6-0d27-4130-8c94-0583b361f516"},"$type":"NodeCanvas.Tasks.Actions.BossBeamAT"}]},"_transitionEvaluation":1,"_color":{"r":0.3529412,"g":0.6039216,"b":0.9647059,"a":1.0},"_name":"Beam","_position":{"x":403.4395,"y":303.3245},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_actionList":{"executionMode":1,"actions":[{"sprayRange":35.0,"spawnTransforms":{"_name":"bulletSpawns","_targetVariableID":"88081b89-dd68-4f25-b931-dd75bfd957e1"},"beenShot":[false,false,false,false,false,false],"gunTip":{"_name":"gunTip","_targetVariableID":"6b355f2e-d9df-4fcd-873e-d2ec799915a6"},"$type":"NodeCanvas.Tasks.Actions.BulletSprayAT"}]},"_transitionEvaluation":1,"_color":{"r":0.3495016,"g":0.6015482,"b":0.9622642,"a":1.0},"_name":"Bullet
+    Spray","_position":{"x":535.7025,"y":395.2086},"$type":"NodeCanvas.StateMachines.ActionState","$id":"4"}],"connections":[{"_condition":{"chosenAttack":{"_name":"chosenAttack","_targetVariableID":"4590fb3c-c188-413d-9353-af616a752ce4"},"requiredAttack":2,"$type":"NodeCanvas.Tasks.Conditions.BanditMoveSelection"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"chosenAttack":{"_name":"chosenAttack","_targetVariableID":"4590fb3c-c188-413d-9353-af616a752ce4"},"$type":"NodeCanvas.Tasks.Conditions.BanditMoveSelection"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"chosenAttack":{"_name":"chosenAttack","_targetVariableID":"4590fb3c-c188-413d-9353-af616a752ce4"},"requiredAttack":1,"$type":"NodeCanvas.Tasks.Conditions.BanditMoveSelection"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"timeout":{"_name":"afterAttackTimer","_targetVariableID":"c22dbc77-39c5-4e75-aec7-729dbdc958e9"},"$type":"NodeCanvas.Tasks.Conditions.Timeout"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"timeout":{"_name":"afterAttackTimer","_targetVariableID":"c22dbc77-39c5-4e75-aec7-729dbdc958e9"},"$type":"NodeCanvas.Tasks.Conditions.Timeout"},"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"timeout":{"_name":"afterAttackTimer","_targetVariableID":"c22dbc77-39c5-4e75-aec7-729dbdc958e9"},"$type":"NodeCanvas.Tasks.Conditions.Timeout"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{"bossHealth":{"_value":5.0,"_name":"bossHealth","_id":"01107421-9fb9-4646-ac6f-130ad08d0bfc","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"attackLevel":{"_value":1,"_name":"attackLevel","_id":"536c2f42-c014-49d4-87c8-8427b33ec3eb","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"afterAttackTimer":{"_value":5.0,"_name":"afterAttackTimer","_id":"c22dbc77-39c5-4e75-aec7-729dbdc958e9","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.31
+    _category: 
+    _comments: 
+    _translation: {x: 17, y: 141}
+    _zoomFactor: 0.7438583
+  _haltSerialization: 0
+  _externalSerializationFile: {fileID: 0}
