@@ -34,6 +34,7 @@ namespace NodeCanvas.Tasks.Conditions {
 			if (batterScript.pitchedTo)
 			{
 				baseballGO.value = batterScript.baseballGO;
+				baseballGO.value.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 				batterScript.pitchedTo = false;
                 return true;
 			}
