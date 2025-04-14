@@ -8,19 +8,6 @@ public class ShipSpawner : MonoBehaviour
     [SerializeField] public GameObject shipPrefab;
     private Animator animator;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public IEnumerator SpawnShip()
     {
         yield

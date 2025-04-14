@@ -7,21 +7,23 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class PitchBallAT : ActionTask {
 
+		//controls the pitcher's ball throw
+
 		public BBParameter<GameObject> baseballPrefab;
 		public BBParameter<GameObject> batterGO;
 		public BBParameter<int> timesUntilAttack;
 
 		public float pitchSpeed;
-		public enum destinations {forward, toBatter};
+		public enum destinations {forward, toBatter}; //decide the kind of throw: set through the inspector
 		public destinations destination;
 
 		private Vector3 pitchDirection;
 
 		protected override string OnInit() {
-			if(destination == destinations.forward)
+			if(destination == destinations.forward) 
 			{
-				pitchDirection = Vector3.left;
-			}
+				pitchDirection = Vector3.left; //sets the pitch direction to the left
+            }
 			
 			return null;
 		}
@@ -29,7 +31,7 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
             if (destination == destinations.toBatter)
             {
-                pitchDirection = (batterGO.value.transform.position - agent.transform.position).normalized;
+                pitchDirection = (batterGO.value.transform.position - agent.transform.position).normalized; //sets the pitch direction towards the batter
             }
 
             GameObject baseballGO = GameObject.Instantiate(baseballPrefab.value, agent.transform.position, Quaternion.identity);
@@ -37,25 +39,10 @@ namespace NodeCanvas.Tasks.Actions {
 
             if (destination == destinations.forward)
             {
-                timesUntilAttack.value --;
+                timesUntilAttack.value --; //if it was a normal throw, reduce the number of normal throws left until the fastball
             }
 
             EndAction(true);
-		}
-
-		//Called once per frame while the action is active.
-		protected override void OnUpdate() {
-			
-		}
-
-		//Called when the task is disabled.
-		protected override void OnStop() {
-			
-		}
-
-		//Called when the task is paused.
-		protected override void OnPause() {
-			
 		}
 	}
 }

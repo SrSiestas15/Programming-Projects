@@ -11,30 +11,15 @@ namespace NodeCanvas.Tasks.Conditions {
 		BatterController batterScript;
 		public BBParameter<GameObject> baseballGO;
 
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit(){
 			batterScript = agent.GetComponent<BatterController>();
 			return null;
 		}
 
-		//Called whenever the condition gets enabled.
-		protected override void OnEnable() {
-			
-		}
-
-		//Called whenever the condition gets disabled.
-		protected override void OnDisable() {
-			
-		}
-
-		//Called once per frame while the condition is active.
-		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 			if (batterScript.pitchedTo)
 			{
-				baseballGO.value = batterScript.baseballGO;
-				baseballGO.value.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+				baseballGO.value = batterScript.baseballGO; //sets the blackboard gameObject to be the same as the one in the BatterController.cs
 				batterScript.pitchedTo = false;
                 return true;
 			}

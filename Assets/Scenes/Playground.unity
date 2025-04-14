@@ -130,6 +130,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 839250677647819600, guid: c048b816ad7b75642bdf3a80d677644d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 839250677647819600, guid: c048b816ad7b75642bdf3a80d677644d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 839250677647819600, guid: c048b816ad7b75642bdf3a80d677644d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5329320540260421965, guid: c048b816ad7b75642bdf3a80d677644d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -387,11 +399,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
   _serializedBlackboard: '{"_variables":{"baseballGO":{"_name":"baseballGO","_id":"3572c1cf-90c7-43e7-9a93-aa5796f97a04","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Blackboard
+    Ready":{"_name":"Blackboard Ready","_id":"7cc857ca-972f-4291-b466-6c71a6291c50","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
   _serializedVariables:
   - _json: '{"_name":"baseballGO","_id":"3572c1cf-90c7-43e7-9a93-aa5796f97a04","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
+  - _json: '{"_name":"Blackboard Ready","_id":"7cc857ca-972f-4291-b466-6c71a6291c50","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
 --- !u!114 &723352665
 MonoBehaviour:
@@ -406,11 +423,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"dynamic":true,"_position":{"x":505.566,"y":136.2462},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"_position":{"x":248.3705,"y":277.2776},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_condition":{"baseballGO":{"_name":"baseballGO","_targetVariableID":"3572c1cf-90c7-43e7-9a93-aa5796f97a04"},"$type":"NodeCanvas.Tasks.Conditions.PassedBallCT"},"_position":{"x":230.0305,"y":438.9818},"_comment":"If
-    Pitcher is aiming at Batter","$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"2"},{"_action":{"actions":[{"audioClip":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.PlayAudioAtPosition"},{"baseballGO":{"_name":"baseballGO","_targetVariableID":"3572c1cf-90c7-43e7-9a93-aa5796f97a04"},"ballSpeed":15.0,"$type":"NodeCanvas.Tasks.Actions.FastballAT"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":378.1803,"y":383.6946},"_comment":"Hit
-    the ball towards the player","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_position":{"x":667.566,"y":272.2462},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"4"},{"_action":{"animationCurve":{"keys":[{"time":0.0,"value":0.0,"tangentMode":0,"inTangent":0.0,"outTangent":0.0},{"time":1.0,"value":1.0,"tangentMode":0,"inTangent":2.0,"outTangent":2.0}],"preWrapMode":8,"postWrapMode":8},"duration":1.0,"$type":"NodeCanvas.Tasks.Actions.MoveToPlayerAT"},"_position":{"x":599.1431,"y":456.8425},"_comment":"Move
-    towards player","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"5"},{"_action":{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_position":{"x":753.4412,"y":458.8324},"_comment":"Swipe
-    with bat","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"dynamic":true,"_position":{"x":505.566,"y":136.2462},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"_position":{"x":248.3705,"y":277.2776},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_condition":{"conditions":[{"baseballGO":{"_name":"baseballGO","_targetVariableID":"3572c1cf-90c7-43e7-9a93-aa5796f97a04"},"$type":"NodeCanvas.Tasks.Conditions.PassedBallCT"},{"valueA":{"_name":"Blackboard
+    Ready","_targetVariableID":"7cc857ca-972f-4291-b466-6c71a6291c50"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":-95.52593,"y":415.021},"_comment":"If
+    Pitcher is aiming at Batter","$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"2"},{"_action":{"actions":[{"audioClip":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.PlayAudioAtPosition"},{"baseballGO":{"_name":"baseballGO","_targetVariableID":"3572c1cf-90c7-43e7-9a93-aa5796f97a04"},"ballSpeed":15.0,"$type":"NodeCanvas.Tasks.Actions.FastballAT"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":134.3447,"y":416.1121},"_comment":"Hit
+    the ball towards the player","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_action":{"boolVariable":{"_name":"Blackboard
+    Ready","_targetVariableID":"7cc857ca-972f-4291-b466-6c71a6291c50"},"setTo":0,"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_position":{"x":280.4821,"y":415.7903},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"dynamic":true,"_position":{"x":667.566,"y":272.2462},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_condition":{"valueA":{"_name":"Blackboard
+    Ready","_targetVariableID":"7cc857ca-972f-4291-b466-6c71a6291c50"},"valueB":{"_value":true},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":479.9272,"y":503.9828},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"6"},{"_action":{"animationCurve":{"keys":[{"time":0.0,"value":0.0,"tangentMode":0,"inTangent":0.0,"outTangent":0.0},{"time":1.0,"value":1.0,"tangentMode":0,"inTangent":2.0,"outTangent":2.0}],"preWrapMode":8,"postWrapMode":8},"duration":1.0,"blackboardReady":{"_name":"Blackboard
+    Ready","_targetVariableID":"7cc857ca-972f-4291-b466-6c71a6291c50"},"$type":"NodeCanvas.Tasks.Actions.MoveToPlayerAT"},"_position":{"x":716.2766,"y":497.4445},"_comment":"Move
+    towards player","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"7"},{"_action":{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_position":{"x":870.5747,"y":499.4344},"_comment":"Swipe
+    with bat","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 8300000, guid: 58f43d202698157419116de2a83929ee, type: 3}
@@ -418,8 +439,8 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -147, y: -66}
-    _zoomFactor: 0.87334824
+    _translation: {x: 24, y: 42}
+    _zoomFactor: 0.62146366
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -459,6 +480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitchedTo: 0
   baseballGO: {fileID: 0}
+  readyUp: 0
 --- !u!50 &723352668
 Rigidbody2D:
   serializedVersion: 4
@@ -777,7 +799,7 @@ MonoBehaviour:
     Prefab":{"_value":1,"_name":"Baseball Prefab","_id":"272fb2c3-f450-49ef-b749-50b4e196bdae","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Batter
     GO":{"_value":2,"_name":"Batter GO","_id":"aeb3e417-0360-49b4-bd07-91a0e92030c6","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"timesUntilAttack":{"_value":1,"_name":"timesUntilAttack","_id":"97e71678-8fb3-41cb-90e8-db9fb3f1746a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"timesUntilAttack":{"_value":3,"_name":"timesUntilAttack","_id":"97e71678-8fb3-41cb-90e8-db9fb3f1746a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences:
   - {fileID: 0}
@@ -797,7 +819,7 @@ MonoBehaviour:
     _references:
     - {fileID: 0}
     - {fileID: 723352661}
-  - _json: '{"_value":1,"_name":"timesUntilAttack","_id":"97e71678-8fb3-41cb-90e8-db9fb3f1746a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
+  - _json: '{"_value":3,"_name":"timesUntilAttack","_id":"97e71678-8fb3-41cb-90e8-db9fb3f1746a","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
 --- !u!114 &1762764768
@@ -813,32 +835,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":481.6216,"y":179.6276},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"_position":{"x":811.7692,"y":298.5818},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_action":{"actions":[{"batterGO":{"_name":"Batter
-    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"batterSprite":1,"pitcherSprite":2,"$type":"NodeCanvas.Tasks.Actions.ChangeSpriteAT"},{"waitTime":{"_value":0.5},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Signfier","_position":{"x":790.5795,"y":419.8312},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"_action":{"actions":[{"audioClip":{"_value":3},"$type":"NodeCanvas.Tasks.Actions.PlayAudioAtPosition"},{"baseballPrefab":{"_name":"Baseball
-    Prefab","_targetVariableID":"272fb2c3-f450-49ef-b749-50b4e196bdae"},"batterGO":{"_name":"Batter
-    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"timesUntilAttack":{"_name":"attacksLeft","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"pitchSpeed":5.0,"$type":"NodeCanvas.Tasks.Actions.PitchBallAT"},{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Shoot
-    in front","_position":{"x":996.2134,"y":412.949},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_position":{"x":356.6216,"y":279.6276},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"4"},{"_condition":{"conditions":[{"valueA":{"_name":"attacksLeft","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckInt"},{"variable":{"_name":"Batter
-    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CheckNull"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":49.65081,"y":404.9721},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"5"},{"_action":{"actions":[{"colour":{"r":1.0,"a":1.0},"_isDisabled":true,"$type":"NodeCanvas.Tasks.Actions.ChangeColorAT"},{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform","_value":4},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform","_value":5},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"batterGO":{"_name":"Batter
-    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"batterSprite":6,"pitcherSprite":7,"$type":"NodeCanvas.Tasks.Actions.ChangeSpriteAT"},{"waitTime":{"_value":0.5},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"colour":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"_isDisabled":true,"$type":"NodeCanvas.Tasks.Actions.ChangeColorAT"},{"setTo":0,"overrideAgent":{"_type":"UnityEngine.Transform","_value":5},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"setTo":0,"overrideAgent":{"_type":"UnityEngine.Transform","_value":4},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Signifier","_position":{"x":278.5895,"y":431.6407},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"actions":[{"audioClip":{"_value":8},"$type":"NodeCanvas.Tasks.Actions.PlayAudioAtPosition"},{"baseballPrefab":{"_name":"Baseball
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":481.6216,"y":179.6276},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"0"},{"_position":{"x":356.6216,"y":279.6276},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"1"},{"_condition":{"conditions":[{"valueA":{"_name":"attacksLeft","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckInt"},{"variable":{"_name":"Batter
+    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CheckNull"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":-41.58197,"y":419.4535},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"2"},{"_action":{"batterGO":{"_name":"Batter
+    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"$type":"NodeCanvas.Tasks.Actions.WaitForBatterAT"},"_position":{"x":136.1251,"y":430.0974},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_action":{"actions":[{"colour":{"r":1.0,"a":1.0},"_isDisabled":true,"$type":"NodeCanvas.Tasks.Actions.ChangeColorAT"},{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform","_value":1},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform","_value":2},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"batterGO":{"_name":"Batter
+    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"batterSprite":3,"pitcherSprite":4,"$type":"NodeCanvas.Tasks.Actions.ChangeSpriteAT"},{"waitTime":{"_value":0.5},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"colour":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"_isDisabled":true,"$type":"NodeCanvas.Tasks.Actions.ChangeColorAT"},{"setTo":0,"overrideAgent":{"_type":"UnityEngine.Transform","_value":2},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"setTo":0,"overrideAgent":{"_type":"UnityEngine.Transform","_value":1},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Signifier","_position":{"x":278.5895,"y":431.6407},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"_action":{"actions":[{"audioClip":{"_value":5},"$type":"NodeCanvas.Tasks.Actions.PlayAudioAtPosition"},{"baseballPrefab":{"_name":"Baseball
     Prefab","_targetVariableID":"272fb2c3-f450-49ef-b749-50b4e196bdae"},"batterGO":{"_name":"Batter
     GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"timesUntilAttack":{"_name":"attacksLeft","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"pitchSpeed":10.0,"destination":1,"$type":"NodeCanvas.Tasks.Actions.PitchBallAT"},{"valueA":{"_name":"attacksLeft","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"valueB":{"_name":"timesUntilAttack","_targetVariableID":"97e71678-8fb3-41cb-90e8-db9fb3f1746a"},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Shoot
-    at Batter","_position":{"x":482.6216,"y":430.9753},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"7"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+    at Batter","_position":{"x":482.6216,"y":430.9753},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"5"},{"_position":{"x":811.7692,"y":298.5818},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"6"},{"_action":{"actions":[{"batterGO":{"_name":"Batter
+    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"batterSprite":6,"pitcherSprite":7,"$type":"NodeCanvas.Tasks.Actions.ChangeSpriteAT"},{"waitTime":{"_value":0.5},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Signfier","_position":{"x":825.5653,"y":424.0295},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"7"},{"_action":{"actions":[{"audioClip":{"_value":8},"$type":"NodeCanvas.Tasks.Actions.PlayAudioAtPosition"},{"baseballPrefab":{"_name":"Baseball
+    Prefab","_targetVariableID":"272fb2c3-f450-49ef-b749-50b4e196bdae"},"batterGO":{"_name":"Batter
+    GO","_targetVariableID":"aeb3e417-0360-49b4-bd07-91a0e92030c6"},"timesUntilAttack":{"_name":"attacksLeft","_targetVariableID":"e90a32df-58dd-4e06-ad80-b6a52f5db8d3"},"pitchSpeed":5.0,"$type":"NodeCanvas.Tasks.Actions.PitchBallAT"},{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}],"$type":"NodeCanvas.Framework.ActionList"},"_tag":"Shoot
+    in front","_position":{"x":996.2134,"y":412.949},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
-  - {fileID: 662378034, guid: d1fd9367b86e6da408c1bf524b3a1c43, type: 3}
-  - {fileID: -1873513614, guid: dd990ef1a10f27e449904c1094305d3f, type: 3}
-  - {fileID: 8300000, guid: a7eafd88c8934c3488adfd755c11efed, type: 3}
   - {fileID: 854679662}
   - {fileID: 1528767143}
   - {fileID: 1061871035, guid: d1fd9367b86e6da408c1bf524b3a1c43, type: 3}
   - {fileID: 843070146, guid: dd990ef1a10f27e449904c1094305d3f, type: 3}
   - {fileID: 8300000, guid: b083afd81299d9d4491624cbf5d2137b, type: 3}
+  - {fileID: 662378034, guid: d1fd9367b86e6da408c1bf524b3a1c43, type: 3}
+  - {fileID: -1873513614, guid: dd990ef1a10f27e449904c1094305d3f, type: 3}
+  - {fileID: 8300000, guid: a7eafd88c8934c3488adfd755c11efed, type: 3}
   _boundGraphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -137, y: 20}
-    _zoomFactor: 0.69054127
+    _translation: {x: -171.79436, y: -79.38518}
+    _zoomFactor: 0.7971362
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -958,7 +981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4964521678311475512, guid: a308100541d7fb04ba030fbaddd0a1c9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7302964530683346227, guid: a308100541d7fb04ba030fbaddd0a1c9, type: 3}
       propertyPath: m_LocalPosition.x

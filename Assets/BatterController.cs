@@ -10,35 +10,22 @@ public class BatterController : MonoBehaviour
     public bool pitchedTo;
     public GameObject baseballGO;
 
-    public enum States
-    {
-        waiting,
-        ready,
-        busy,
-    }
-    public static States currentState;
+    public bool readyUp;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if(baseballGO != null)
+        if(baseballGO != null) //if there's currently a baseball that the batter is paying attention to
         {
             if((baseballGO.transform.position - transform.position).magnitude < .2f)
             {
-                pitchedTo = true;
+                pitchedTo = true; //the pitcher's throw has been caught by batter
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<BaseballController>() != null)
+        if(collision.GetComponent<BaseballController>() != null) //get a reference to the baseball that the batter collided with
         {
             baseballGO = collision.gameObject;
         }
